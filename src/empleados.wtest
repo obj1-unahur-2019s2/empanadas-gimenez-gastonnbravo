@@ -25,5 +25,23 @@ test "gimenez"{
 	assert.equals(278425, gimenez.dinero())
 	
 }
-
+test "galvan"{
+	assert.equals(15000, galvan.sueldo())
+	galvan.gastar(4000)
+	assert.equals(-4000, galvan.totalDeuda())
+	assert.equals(0,galvan.totalDinero())
+	galvan.gastar(8000)
+	assert.equals(-12000,galvan.totalDeuda())
+	assert.equals(0,galvan.totalDinero())
+	galvan.cobrarSueldo()
+	galvan.sueldo(15000)
+	assert.equals(0,galvan.totalDeuda())
+	galvan.gastar(25000)
+	assert.equals(-22000,galvan.totalDeuda())
+	assert.equals(0,galvan.totalDinero())
+	galvan.cobrarSueldo()
+	galvan.sueldo(15000)
+	assert.equals(-7000,galvan.totalDeuda())
+	assert.equals(0,galvan.totalDinero())	
+}
 
